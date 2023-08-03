@@ -2,7 +2,8 @@
 
 ## Tasks
 
-0. [A library is not a luxury but one of the necessities of life](./libmy.a)([main.h](./main.h)) : Create the static library `libmy.a` containing all the functions listed below: 
+0. [A library is not a luxury but one of the necessities of life](./libmy.a)([main.h](./main.h)) : Create the static library libmy.a containing all the functions listed below: 
+
 	`int _putchar(char c);`
 	`int _islower(int c);`
 	`int _isalpha(int c);`
@@ -23,7 +24,6 @@
 	`unsigned int _strspn(char *s, char *accept);`
 	`char *_strpbrk(char *s, char *accept);`
 	`char *_strstr(char *haystack, char *needle);`
-
 If you haven’t coded all of the above functions create empty ones with the right prototype.
 Don’t forget to push your `main.h` file to your repository. It should at least contain all the prototypes of the above functions.
 
