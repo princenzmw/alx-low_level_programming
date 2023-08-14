@@ -14,4 +14,4 @@
 4. [SUM](./4-sum.h) : A function-like macro `SUM(x, y)` that computes the sum of the numbers `x` and `y`.  
 
 ### Note: 
-	- All your code should be compilled this way: `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c -o output
+	- All your code should be compiled this way: `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c -o output`
