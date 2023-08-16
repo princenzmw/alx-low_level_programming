@@ -6,16 +6,19 @@
  *		a parameter on each element of an array
  * @array: an array parameter to pass
  * @size: a size of the array
- * @action: a pointer to the function to pass
+ * @action: a pointer to the function to print decimal or hex nbrs
  * Return: nothing
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	unsigned int i;
+	size_t i;
 
-	for (i = 0; i < size; i++)
+	if (array && action)
 	{
-		action(array[i]);
+		for (i = 0; i < size; i++)
+		{
+			action(array[i]);
+		}
 	}
 }
