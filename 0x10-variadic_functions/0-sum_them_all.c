@@ -7,7 +7,7 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list ap;
+	va_list prinko;
 	unsigned int i = 0;
 	int sum;
 
@@ -16,14 +16,14 @@ int sum_them_all(const unsigned int n, ...)
 		return (0);
 	}
 
-	va_start(ap, n);
+	va_start(prinko, n);
 	sum = 0;
 
 	while (i < n)
 	{
-		sum += va_arg(ap, int);
+		sum += va_arg(prinko, int);
 		i++;
 	}
-	va_end(ap);
+	va_end(prinko);
 	return (sum);
 }
