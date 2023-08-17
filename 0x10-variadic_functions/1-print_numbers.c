@@ -10,12 +10,13 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
+	int num;
 	va_list prinko;
 
 	va_start(prinko, n);
 	for (i = 0; i < n; i++)
 	{
-		int num = va_arg(prinko, int);
+		num = va_arg(prinko, int);
 
 		printf("%d", num);
 
