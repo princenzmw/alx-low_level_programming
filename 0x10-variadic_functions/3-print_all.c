@@ -12,35 +12,41 @@
 void print_all(const char * const format, ...)
 {
 	va_list prinko;
-	const char *c;
-	char *separator = "";
+	int i = 0;
+	char *s;
 
 	va_start(prinko, format);
 
-	c = format;
-	while (*c != '\0')
+	while (format && format[i])
 	{
-		switch (*c)
+		switch (format[i])
 		{
 			case 'c':
-				printf("%s%c", separator, va_arg(prinko, int));
+				printf("%c", va_arg(prinko, int));
 				break;
 			case 'i':
-				printf("%s%d", separator, va_arg(prinko, int));
+				printf("%d", va_arg(prinko, int));
 				break;
 			case 'f':
-				printf("%s%f", separator, va_arg(prinko, double));
+				printf("%f", va_arg(prinko, double));
 				break;
 			case 's':
-				printf("%s%s", separator, va_arg(prinko, char *));
+				s = va_arg(prinko, char *);
+				if (s == NULL)
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", s);
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
-		separator = ", ";
-		c++;
+		if (format[i + 1])
+			printf(", ");
+		i++;
 	}
-
 	printf("\n");
 	va_end(prinko);
 }
