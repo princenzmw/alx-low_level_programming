@@ -1,12 +1,13 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - Prints anything
- * @format: A list of types of arguments passed to the function
- *	c: char i: integer f: float s: char *
- *	if string is NULL print (nil)
- *	instead any char should be ignored
- * Return: Nothing
+ * print_all - Prints anything.
+ * @format: A list of types of arguments passed to the function.
+ *          c: char i: integer f: float s: char *
+ *          If string is NULL, print (nil).
+ *          Any other char should be ignored.
+ *
+ * Return: Nothing.
  */
 void print_all(const char * const format, ...)
 {
@@ -16,7 +17,8 @@ void print_all(const char * const format, ...)
 
 	va_start(prinko, format);
 
-	for (c = format; *c != '\0'; ++c)
+	c = format;
+	while (*c != '\0')
 	{
 		switch (*c)
 		{
@@ -33,9 +35,10 @@ void print_all(const char * const format, ...)
 				printf("%s%s", separator, va_arg(prinko, char *));
 				break;
 			default:
-				continue;
+				break;
 		}
 		separator = ", ";
+		c++;
 	}
 
 	printf("\n");
