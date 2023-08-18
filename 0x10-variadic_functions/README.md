@@ -2,6 +2,8 @@
 
 ## Tasks
 
+- All `*-main.c` files will be located in the [main](./main) directory.
+
 0. [Beauty is variable, ugliness is constant](./0-sum_them_all.c) : A function that returns the sum of all its parameters.
 	- Prototype: `int sum_them_all(const unsigned int n, ...);`
 	- If `n == 0`, return `0`.
@@ -39,6 +41,3 @@
 	- You are allowed to use `printf`
 	- Print a new line at the end of your function.
 	- Compile the code this way: `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 main/3-main.c 3-print_all.c -o d`
-4. [Real programmers can write assembly code in any language](./100-hello_holberton.asm) : Write a 64-bit program in asembly that prints `Hello, Holberton`, followed by a new line.
-	- You are only allowed to use the system call `write` (use `int` or `syscall`, not a call)
-	- Your program will be compiled using `nasm` and `gcc` (as follows) : `nasm -f elf64 100-hello_holberton.asm && gcc -no-pie -std=gnu89 100-hello_holberton.o -o hello`
