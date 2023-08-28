@@ -12,25 +12,26 @@ size_t print_list(const list_t *h)
 {
 	size_t node_count = 1;
 
-	/*return 0 as number of nodes*/
+	/* Return 0 as the number of nodes if the linked list is empty */
 	if (h == NULL)
 		return (0);
 
+	/* Loop through the linked list */
 	while (h->next != NULL)
 	{
-		/*if str is NULL return len as 0 and str as (nil)*/
+		/* If str is NULL, print the length as 0 and str as "(nil)" */
 		if (h->str == NULL)
 			printf("[%d] %s\n", 0, "(nil)");
 		else
 			printf("[%d] %s\n", h->len, h->str);
 
-		/*go to the next node*/
+		/* Go to the next node */
 		h = h->next;
-		/*count number of nodes*/
+		/*Increment the count number of nodes*/
 		node_count += 1;
 	}
 
-	/*print for the last node*/
+	/* Print information for the last node */
 	printf("[%d] %s\n", h->len, h->str);
 
 	return (node_count);
