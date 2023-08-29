@@ -22,7 +22,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (current == visitedNodes[i])
 			{
 				printf("-> [%p] %d\n", (void *)current, current->n);
-				printf("Loop starts at [%p] %d\n", (void *)current, current->n);
+
 				return (count);
 			}
 		}
@@ -52,6 +52,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	{
 		return (NULL);
 	}
+
 	new_node->n = n;
 	new_node->next = *head;
 	*head = new_node;
