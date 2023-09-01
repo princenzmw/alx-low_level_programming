@@ -26,7 +26,7 @@
 ## Mandatory Tasks
 
 - All `*-main.c` are in the [main](./main) directory.
-
+- You are allowed to use [_putchar](https://github.com/alx-tools/_putchar.c/blob/master/_putchar.c).
 ---
 
 0. [0](./0-binary_to_uint.c) : A function that converts a binary number to an `unsigned int`.
@@ -49,7 +49,7 @@
 		10000000001
 		julien@ubuntu:~/0x14. Binary$
 		```
-	- You are not allowed to use arrays.https://github.com/alx-tools/0x13.c/blob/master/crackme3
+	- You are not allowed to use arrays.
 	- You are not allowed to use `malloc`
 	- You are not allowed to use the `%` or `/` operators.
 	- To enable debug mode that will print statements of what is happening add this `-D DEBUG` at the end of the compile line.
