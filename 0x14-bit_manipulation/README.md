@@ -97,5 +97,5 @@
 		```
 	- Compile the code this way: `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 main/100-main.c 100-get_endianness.c -o h`
 7. [Crackme3](./101-password) : Find the password for this [program](https://github.com/alx-tools/0x13.c/blob/master/crackme3).
-	- Get the file this way: `curl -fsSL https://raw.githubusercontent.com/holbertonschool/0x13.c/master/crackme3 -o crackme3`
+	- Get the file this way: `curl -fsSL https://github.com/alx-tools/0x13.c/blob/master/crackme3 -o crackme3`
 	- Will revisit this challenge and explain how to solve it.
