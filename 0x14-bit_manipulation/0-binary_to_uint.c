@@ -9,6 +9,22 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
+	unsigned int decimal = 0;
+
+	if (!b)
+		return (0);
+
+	while (*b == '0' || *b == '1')
+	{
+		decimal = (decimal << 1) | (*b - '0');
+		b++;
+	}
+
+	return ((*b == '\0') ? decimal : 0);
+}
+/*
+*unsigned int binary_to_uint(const char *b)
+*{
 	unsigned int decimalNum = 0;
 
 	if (!b)
@@ -27,3 +43,4 @@ unsigned int binary_to_uint(const char *b)
 	}
 	return (decimalNum);
 }
+*/
