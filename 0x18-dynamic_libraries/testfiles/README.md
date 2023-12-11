@@ -29,3 +29,17 @@ Then, we can compile it by typing the following:
 gcc -L . 0-main.c -ldynamic -o example
 ```
 Note that the name we gave to the library in this example was `dynamic`. Here we use the `-L` option to tell the program where to find the library, in this case `.` that refers to the current directory. The `-l` option is to tell the compiler to look for the library.
+
+# How to use it in Python
+
+With Python you can import the libraries you created in C. All you have to do is import ctypes and use CDLL just like this one below:
+```py
+#!/usr/bin/python3
+import ctypes
+prinko = ctypes.CDLL(‘./fudji.so’)
+```
+Then you can use your previously created functions as you want. Let’s say that you want to call a function called `mul` from your library, then you can call it as `prinko.mul`.
+You can find an example in this folder:
+
+- [Library](./100-operations.so) - Dynamic library that contains functions in [math.c file](./math.c)
+- [Python file](./test.py) - a file where I used my created library: `100-operations.so`
