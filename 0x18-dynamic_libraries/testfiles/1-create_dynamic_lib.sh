@@ -8,3 +8,5 @@ gcc -shared -o liball.so *.o
 
 # Clean up all the Object files
 rm *.o
+
+echo "Dynamic library liball.so created successfully."
