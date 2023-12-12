@@ -1,4 +1,5 @@
 #!/bin/bash
-wget -P . https://github.com/alx-tools/0x18.c/raw/master/gm
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
-exec ./gm 9 8 10 24 75 9 "$@"
+wget -P . https://github.com/princenzmw/alx-low_level_programming/raw/main/0x18-dynamic_libraries/libfinal.so
+export LD_PRELOAD="$PWD/libfinal.so"
+exec ./gm "$@"
+
