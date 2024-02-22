@@ -1,24 +1,19 @@
 CC = gcc
 SRC = main.c school.c
-OBJ = $(patsubst .c,.o,$(SRC))
+OBJ = $(SRC:.c=.o)
 NAME = school
-RM =
 CFLAGS = -Wall -Werror -Wextra -pedantic
+.PHONY : all clean oclean fclean re
 
-all: $(OBJ)
-ifneq ("$(wildcard *.h)","")
-	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)
-endif
+all : m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
-clean:
+clean :
 	$(RM) *~ $(NAME)
 
-
-oclean:
-ifneq ("$(wildcard $(OBJ))","")
+oclean :
 	$(RM) $(OBJ)
-endif
 
-fclean: clean oclean
+fclean : clean oclean
 
-re: fclean all
+re : oclean all
