@@ -9,15 +9,16 @@ island described in grid:
 def count_neighbor_waters(grid, row, col):
     """Counts and Return the number of water neighbors of a cell in a grid."""
 
-    # Define the offsets for neighboring cells
-    offsets = [(0, -1), (-1, 0), (0, 1), (1, 0)]
+    neighbors = 0
 
-    # Count the number of water neighbors
-    neighbors = sum(
-        1 for dr, dc in offsets
-        if 0 <= row + dr < len(grid) and 0 <= col + dc < len(grid[0])
-        and not grid[row + dr][col + dc]
-    )
+    if row <= 0 or not grid[row - 1][col]:
+        neighbors += 1
+    if col <= 0 or not grid[row][col - 1]:
+        neighbors += 1
+    if col >= len(grid[row]) - 1 or not grid[row][col + 1]:
+        neighbors += 1
+    if row >= len(grid) - 1 or not grid[row + 1][col]:
+        neighbors += 1
 
     return neighbors
 
@@ -36,10 +37,9 @@ def island_perimeter(grid):
         to the water around the island).
     """
     perimeter = 0
-
-    for row_idx, row in enumerate(grid):
-        for col_idx, cell in enumerate(row):
-            if cell:
-                perimeter += count_neighbor_waters(grid, row_idx, col_idx)
+    for row in range(len(grid)):
+        for col in range(len(grid[row])):
+            if grid[row][col]:
+                perimeter += count_neighbor_waters(grid, row, col)
 
     return perimeter
